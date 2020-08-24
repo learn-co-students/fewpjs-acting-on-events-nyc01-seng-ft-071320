@@ -203,3 +203,46 @@ language to browsers. JavaScript allows for dynamic page rendering, and user can
 interact with the contents of the page in real time. With knowledge of these
 basic techniques, you'll become comfortable working with more complex
 interactions like those in video games that you may have played or seen before!
+
+function moveDodgerLeft() {
+  let leftNumbers = dodger.style.left.replace('px', '');
+  let left = parseInt(leftNumbers, 10)
+  if (left > 0) {
+    dodger.style.left = `${left - 10}px`
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === "ArrowLeft") {
+    moveDodgerLeft()
+  }
+}
+
+
+function moveDodgerRight() {
+  let leftNumbers = dodger.style.left.replace("px", "");
+  let left = parseInt(leftNumbers, 10);
+  if (left < 360) {
+    dodger.style.left = `${left + 10}px`;
+  }
+}
+
+function moveDodgerUp() {
+  let bot = parseInt(dodger.style.bottom, 10);
+  if (bot < 380) {
+    dodger.style.bottom = `${bot + 10}px`;
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === "ArrowRight") {
+    moveDodgerLeft()
+  }
+}
+
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === "ArrowUp") {
+    moveDodgerLeft()
+  }
+}
